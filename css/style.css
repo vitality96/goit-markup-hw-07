@@ -260,17 +260,17 @@ body {
   transition: opacity 250ms var(--timing-function);
 }
 
-.backdrop.is-hidden {
+.backdrop--is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
+.backdrop--is-hidden .backdrop__modal {
   transform: translate(-50%, -50%) scale(0.9);
-  opacity: 0;
+  opacity: 1;
 }
 
-.modal {
+.backdrop__modal {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -289,30 +289,11 @@ body {
     opacity 250ms var(--timing-function);
 }
 
-.btn-close {
-  position: absolute;
-  top: 8px;
-  left: 490px;
-  padding: 0%;
-  border: 0;
-
-  cursor: pointer;
-
-  background-color: var(--primary-white-color);
-  fill: #000000;
-
-  transition: fill 250ms var(--timing-function);
-}
-
-.btn-close:hover {
-  fill: var(--accent-color);
-}
-
 .form-modal {
   padding: 40px;
 }
 
-.text-form-modal {
+.form-modal__text {
   display: block;
   margin-bottom: 12px;
 
@@ -324,7 +305,7 @@ body {
   color: var(--title-text-color);
 }
 
-.form-label-modal {
+.form-modal__label {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -339,21 +320,21 @@ body {
   color: var(--primary-text-color);
 }
 
-.form-label-modal:focus-within .form-input-modal {
+.form-modal__label:focus-within .form-modal__input {
   border-color: var(--accent-color);
   outline: none;
 }
 
-.form-label-modal:focus-within .form-modal-icon {
+.form-modal__label:focus-within .form-modal__icon {
   fill: var(--accent-color);
 }
 
-.form-label-modal.textarea {
+.form-modal__label--size {
   margin-bottom: 20px;
   height: auto;
 }
 
-.form-input-modal {
+.form-modal__input {
   margin-top: 4px;
   padding: 12px 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -361,7 +342,7 @@ body {
   border-radius: 4px;
 }
 
-.form-textarea-modal {
+.form-modal__textarea {
   height: 120px;
   margin-top: 4px;
   padding: 12px 16px;
@@ -371,7 +352,7 @@ body {
   resize: none;
 }
 
-.form-textarea-modal::placeholder {
+.form-modal__textarea::placeholder {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -380,17 +361,23 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-label-modal:focus-within .form-textarea-modal {
+.form-modal__label:focus-within .form-modal__textarea {
   border-color: var(--accent-color);
   outline: none;
 }
 
-.form-checkbox-modal {
+.form-modal__icon {
+  position: absolute;
+  top: 27px;
+  left: 12px;
+}
+
+.form-checkbox {
   margin-bottom: 30px;
   text-align: center;
 }
 
-.form-label-checkbox-text {
+.form-checkbox__label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -401,15 +388,11 @@ body {
   color: var(--primary-text-color);
 }
 
-.link-form-checkbox {
-  color: var(--accent-color);
-}
-
-.checkbox-input {
+.form-checkbox__input {
   appearance: none;
 }
 
-.checkbox-icon {
+.form-checkbox__icon {
   content: "";
   display: inline-block;
   margin-right: 7px;
@@ -419,7 +402,7 @@ body {
   border-radius: 2px;
 }
 
-.checkbox-input:checked + .checkbox-icon {
+.form-checkbox__input:checked + .form-checkbox__icon {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
   background-image: url(../images/icon-check.svg);
@@ -427,12 +410,16 @@ body {
   background-origin: border-box;
 }
 
-.btn-form {
+.form-checkbox__link {
+  color: var(--accent-color);
+}
+
+.form-btn {
   display: flex;
   justify-content: center;
 }
 
-.btn-form-modal {
+.form-btn__modal {
   padding: 10px 56px;
   border-radius: 4px;
   border: none;
@@ -450,23 +437,29 @@ body {
   transition: background-color 250ms var(--timing-function);
 }
 
-.btn-form-modal:hover,
-.btn-form-modal:focus {
+.form-btn__modal:hover,
+.form-btn__modal:focus {
   background-color: #188ce8;
 }
 
-.form-modal-icon {
+.form-btn__close {
   position: absolute;
-  top: 27px;
-  left: 12px;
+  top: 8px;
+  left: 490px;
+  padding: 0%;
+  border: 0;
+
+  cursor: pointer;
+
+  background-color: var(--primary-white-color);
+  fill: #000000;
+
+  transition: fill 250ms var(--timing-function);
 }
 
-/*---------------Section---------------*/
-
-/* .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-} */
+.form-btn__close :hover {
+  fill: var(--accent-color);
+}
 
 /*---------------Особливості---------------*/
 
