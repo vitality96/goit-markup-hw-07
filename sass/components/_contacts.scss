@@ -27,16 +27,16 @@
   text-decoration: none;
   transition: color 250ms var(--timing-function),
     fill 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    fill: var(--accent-color);
+  }
 }
 
 .contact-list__icon {
   margin-right: 10px;
-}
-
-.contact-list__link:hover,
-.contact-list__link:focus {
-  color: var(--accent-color);
-  fill: var(--accent-color);
 }
 
 .contact-list__link--retreat:last-child {

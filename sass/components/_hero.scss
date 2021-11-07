@@ -61,9 +61,9 @@
   cursor: pointer;
 
   transition: background-color 250ms var(--timing-function);
-}
 
-.btn__hero:hover,
-.btn__hero:focus {
-  background-color: #188ce8;
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+  }
 }

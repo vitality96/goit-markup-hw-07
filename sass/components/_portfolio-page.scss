@@ -36,19 +36,19 @@
 
   transition: background-color 250ms var(--timing-function),
     color 250ms var(--timing-function), box-shadow 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .portfolio__btn--active {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
-}
-
-.portfolio__btn:hover,
-.portfolio__btn:focus {
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .portfolio__list--centered {
@@ -67,29 +67,20 @@
   text-decoration: none;
 
   transition: box-shadow 250ms var(--timing-function);
-}
 
-.portfolio__card:hover,
-.portfolio__card:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
 
-.portfolio__card:nth-child(3n) {
-  margin-right: 0%;
-}
+  &:nth-child(3n) {
+    margin-right: 0%;
+  }
 
-.portfolio__card:nth-last-child(-n + 3) {
-  margin-bottom: 0%;
-}
-
-.portfolio__thumb:hover .pofrtolio__description {
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.portfolio__thumb:hover .portfolio__block::before {
-  transform: translateY(0);
+  &:nth-last-child(-n + 3) {
+    margin-bottom: 0%;
+  }
 }
 
 .portfolio__link {
@@ -112,6 +103,10 @@
 
   transform: translateY(101%);
   transition: transform 250ms var(--timing-function);
+
+  .portfolio__thumb:hover & {
+    transform: translateY(0);
+  }
 }
 
 .portfolio__img {
@@ -136,6 +131,11 @@
   color: var(--primary-white-color);
 
   transition: transform 250ms var(--timing-function);
+
+  .portfolio__thumb:hover & {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .portfolio__name {

@@ -36,6 +36,11 @@
 
   text-decoration: none;
   transition: color 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
 }
 
 .nav__item--retreat:first-child {
@@ -44,11 +49,6 @@
 
 .nav__item--retreat:not(:last-child) {
   margin-right: 50px;
-}
-
-.nav__link--decoration:hover,
-.nav__link--decoration:focus {
-  color: var(--accent-color);
 }
 
 .nav__list .nav__link--active {

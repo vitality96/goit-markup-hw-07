@@ -41,10 +41,10 @@
 
   transition: border 250ms var(--timing-function),
     fill 250ms var(--timing-function);
-}
 
-.clients__link:hover,
-.clients__link:focus {
-  border: 1px solid var(--accent-color);
-  fill: var(--accent-color);
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+    fill: var(--accent-color);
+  }
 }
